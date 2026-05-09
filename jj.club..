@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<jj-club>Red Green Predictor </wingo>
+<title>Red Green Predictor Demo</title>
 
 <style>
 * {
@@ -152,10 +152,10 @@ button:hover {
 
 <div class="container">
 
-  <div class="jj-club">👑 </div>
+  <div class="title">👑 Royal Win Predictor</div>
 
   <div style="text-align:center;margin-bottom:18px;color:#94a3b8;font-size:14px;">
-    Premium Gaming Interface
+    Premium Demo Gaming Interface
   </div>
 
   <div class="card">
@@ -170,8 +170,8 @@ button:hover {
   </div>
 
   <div class="card">
-    <h3> Wallet</h3>
-    <p style="text-align:center;opacity:0.7;margin-bottom:10px;">Secure  Payment Options</p>
+    <h3>Demo Wallet</h3>
+    <p style="text-align:center;opacity:0.7;margin-bottom:10px;">Secure Demo Payment Options</p>
 
     <div style="display:flex;gap:10px;margin-bottom:12px;">
       <button style="background:#4285F4;color:white;">GPay</button>
@@ -180,8 +180,8 @@ button:hover {
     </div>
 
     <div style="display:flex;gap:10px;">
-      <button onclick="Deposit()" style="background:#00c853;color:white;">Demo Deposit</button>
-      <button onclick="Withdraw()" style="background:#ff9800;color:white;"> Withdrawal</button>
+      <button onclick="fakeDeposit()" style="background:#00c853;color:white;">Demo Deposit</button>
+      <button onclick="fakeWithdraw()" style="background:#ff9800;color:white;">Demo Withdrawal</button>
     </div>
 
     <p id="walletMsg" style="margin-top:10px;text-align:center;"></p>
@@ -192,8 +192,8 @@ button:hover {
       <span style="font-size:13px;color:#94a3b8;">VIP LEVEL 3</span>
       <span style="background:#22c55e;padding:4px 10px;border-radius:20px;font-size:12px;">ONLINE</span>
     </div>
-    <h2>Royal balance</h2>
-    <p id="coins">0</p>
+    <h2>Royal Coins</h2>
+    <p id="coins">1000</p>
   </div>
 
   <div class="buttons">
@@ -246,19 +246,19 @@ button:hover {
 
   <div style="margin-top:20px;background:linear-gradient(135deg,#7c3aed,#2563eb);padding:18px;border-radius:18px;text-align:center;">
     <h3 style="margin-bottom:8px;">🎁 Daily Bonus</h3>
-    <p style="opacity:0.9;font-size:14px;">Claim your free  rewards every day</p>
+    <p style="opacity:0.9;font-size:14px;">Claim your free demo rewards every day</p>
     <button style="margin-top:12px;background:white;color:black;font-weight:bold;">Claim Bonus</button>
   </div>
 
   <div class="footer">
-    jj-club  Platform © 2026
+    Royal Win Demo Platform © 2026
   </div>
 
 </div>
 
 <script>
 let history = [];
-let balance = 0;
+let coins = 1000;
 
 function addColor(color) {
   history.push(color);
@@ -267,8 +267,8 @@ function addColor(color) {
   updateStats();
   predictNext();
 
-  balance += 10;
-  document.getElementById('coins').innerText = balance;
+  coins += 10;
+  document.getElementById('coins').innerText = coins;
 }
 
 function updateHistory() {
@@ -324,19 +324,19 @@ function predictNext() {
   pred.innerText = text;
   pred.style.color = color;
 }
-function Deposit() {
-  balance += 100 - 200 - 300 - 500 ;
-  document.getElementById('coins').innerText = balance;
-  document.getElementById('walletMsg').innerText = ' Deposit Successful via GPay / PhonePe / Paytm';
+function fakeDeposit() {
+  coins += 500;
+  document.getElementById('coins').innerText = coins;
+  document.getElementById('walletMsg').innerText = 'Demo Deposit Successful via GPay / PhonePe / Paytm';
 }
 
-function Withdraw() {
-  if(balance >= 110) {
-    balance -= 1600;
-    document.getElementById('coins').innerText = balance;
-    document.getElementById('walletMsg').innerText = ' Withdrawal Successful via GPay / PhonePe / Paytm';
+function fakeWithdraw() {
+  if(coins >= 200) {
+    coins -= 200;
+    document.getElementById('coins').innerText = coins;
+    document.getElementById('walletMsg').innerText = 'Demo Withdrawal Successful via GPay / PhonePe / Paytm';
   } else {
-    document.getElementById('walletMsg').innerText = 'Not Enough balance ';
+    document.getElementById('walletMsg').innerText = 'Not Enough Demo Coins';
   }
 }
 
